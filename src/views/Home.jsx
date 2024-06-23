@@ -6,7 +6,7 @@ const Home = () => {
     const [pizzas, setPizzas] = useState([]);
 
     useEffect(() => {
-        fetch('/pizzas.json')
+        fetch(`${process.env.PUBLIC_URL}/pizzas.json`)
             .then(response => response.json())
             .then(data => setPizzas(data))
             .catch(error => console.error('Error fetching pizzas:', error));

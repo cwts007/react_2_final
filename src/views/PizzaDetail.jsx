@@ -10,7 +10,7 @@ const PizzaDetail = () => {
     const [quantity, setQuantity] = useState(1);
 
     useEffect(() => {
-        fetch('/pizzas.json')
+        fetch(`${process.env.PUBLIC_URL}/pizzas.json`)
             .then(response => response.json())
             .then(data => {
                 const selectedPizza = data.find(pizza => pizza.id === id);
